@@ -5,8 +5,6 @@ aplicación en Python ("File Organizer", un organizador de archivos por tipo)
 empaquetada en Docker. Toda la infraestructura se provisiona con Terraform,
 aplicando modularización y un backend remoto de estado.
 
-> Proyecto personal de aprendizaje, no destinado a producción.
-
 ## Arquitectura
 ```
 [ Terraform ] --provisiona--> [ AWS ]
