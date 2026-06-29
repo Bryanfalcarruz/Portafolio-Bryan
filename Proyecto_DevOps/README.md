@@ -1,13 +1,11 @@
-# File Organizer en AWS — Proyecto personal de IaC (Terraform + Docker)
+# aws-terraform-docker-app
 
-> ⚠️ **Proyecto personal de aprendizaje**, no destinado a producción.
-> Su objetivo es practicar Infraestructura como Código, contenedores y servicios de AWS.
-
-## ¿Qué hace?
 Despliega en AWS la infraestructura necesaria para ejecutar una pequeña
 aplicación en Python ("File Organizer", un organizador de archivos por tipo)
 empaquetada en Docker. Toda la infraestructura se provisiona con Terraform,
 aplicando modularización y un backend remoto de estado.
+
+> Proyecto personal de aprendizaje, no destinado a producción.
 
 ## Arquitectura
 ```
@@ -47,7 +45,7 @@ terraform plan
 terraform apply
 ```
 
-## Qué aprendí
+## Objetivos
 - Estructurar Terraform en módulos reutilizables (network / compute / ecr).
 - Configurar un backend remoto con bloqueo de estado (S3 + DynamoDB).
 - Contenerizar una app con Docker y publicar imágenes en ECR.
@@ -57,4 +55,4 @@ terraform apply
 ## Estado actual
 Infraestructura base operativa (network, compute, ecr). Próximos pasos:
 push de la imagen a ECR, ejecución automática del contenedor en EC2,
-observabilidad con CloudWatch e introducir CI/CD.
+observabilidad con CloudWatch e implementar CI/CD con GitHub Actions.
