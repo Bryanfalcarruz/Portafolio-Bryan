@@ -21,7 +21,7 @@ Infraestructura como Codigo (IaC) para desplegar en AWS una aplicacion Python ("
 - **Contenedores:** Docker.
 - **Control de versiones:** Git (ramas por feature y pull requests).
 
-Carpeta del proyecto: [aws-terraform-docker-app/](./aws-terraform-docker-app)
+Carpeta del proyecto: [Proyecto_DevOps/](./Proyecto_DevOps)
 
 **Estado:** infraestructura base operativa (network, compute, ecr). Proximos pasos: publicar la imagen en ECR, ejecutar el contenedor en EC2, anadir observabilidad con CloudWatch y un flujo CI/CD con GitHub Actions.
 
@@ -29,7 +29,7 @@ Carpeta del proyecto: [aws-terraform-docker-app/](./aws-terraform-docker-app)
 
 ## Estructura del repositorio
 
-- **aws-terraform-docker-app/** - Proyecto principal de DevOps/IaC (Docker + Terraform + AWS).
+- **Proyecto_DevOps/** - Proyecto principal de DevOps/IaC (Docker + Terraform + AWS).
 - **AWS/** - Practicas y ejemplos con servicios AWS (CloudFormation, RDS, VPC).
 - **Algoritmos_y_scripts/** - Scripts en Python y ejercicios de practica.
 
