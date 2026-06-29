@@ -1,54 +1,45 @@
-=========================================
-Portafolio de proyectos personales y técnicos.
-=========================================
+# Portafolio - Bryan Felipe Alcarruz Rodriguez
 
-Incluye scripts, automatizaciones, ejercicios lógicos y desarrollos prácticos.  
+Portafolio personal de proyectos tecnicos orientados a **infraestructura, Cloud (AWS) y DevOps**.
 
+Soporte e infraestructura IT/OT (~3 anos) - Estudiante de Ingenieria en Computacion e Informatica (USACH) - AWS Certified Cloud Practitioner.
 
---------------------------------------------------
-## Proyecto en curso: **DevOps – File Organizer**
---------------------------------------------------
-
-Proyecto orientado a DevOps basado en un organizador de archivos en Python.
-La aplicación fue contenerizada con Docker y actualmente se encuentra en proceso de despliegue en AWS mediante Terraform, aplicando buenas prácticas de Infraestructura como Código (IaC), modularización y documentación profesional.
-
------------------------------------------
-## Estado actual (05-10-2025)
------------------------------------------
-
-- ✅ Infraestructura desplegada en AWS mediante Terraform, con los módulos **network**, **compute** y **ECR** completamente operativos.  
-- ✅ Aplicación contenerizada y preparada para su despliegue automatizado.  
-- ✅ Implementadas buenas prácticas de modularización, documentación y control de versiones.  
-- ✅ Proyecto documentado con evidencias y estructura clara para su mantenimiento y mejora continua.  
-
------------------------------------------
-## Próximos pasos
------------------------------------------
-
-  -Subir la imagen Docker del File Organizer a ECR.
-  -Verificar la ejecución automática del contenedor en EC2.
-  -Implementar observabilidad básica con CloudWatch Logs y métricas.
-  -Ampliar automatización en el flujo de despliegue (CI/CD).  
-  -Iniciar planificación para futuras mejoras: seguridad, escalabilidad y optimización de costos.  
-
------------------------------------------
-## Actualización anterior (24-09-2025)
------------------------------------------
-
-- ✅ Script en Python listo (CLI con opciones --dry-run, --exclude, --on-collision). 
-- ✅ Contenerización con Docker (Dockerfile y .dockerignore). 
-- ✅  prácticas Git (ramas por feature, PR y merges). 
-- ✅ Documentación inicial - 
-- ✅ bootstrap (S3 + DynamoDB) para backend remoto de Terraform.
-
------------------------------------------
-## Estructura del repositorio
------------------------------------------
-
-- Algoritmos_y_scripts/ → Scripts en Python y ejercicios de práctica.  
-- AWS/ → Prácticas y ejemplos con servicios AWS (CloudFormation, RDS, VPC).  
-- Proyecto_DevOps/ → Proyecto principal DevOps (Docker + Terraform + AWS).  
+- LinkedIn: https://linkedin.com/in/bryan-alcarruz
+- GitHub: https://github.com/Bryanfalcarruz
+- Contacto: bryan.f.alcarruz@gmail.com
 
 ---
 
-*Este README se actualiza de forma continua para reflejar el progreso del proyecto.*  
+## Proyecto destacado
+
+### aws-terraform-docker-app
+
+Infraestructura como Codigo (IaC) para desplegar en AWS una aplicacion Python ("File Organizer") contenerizada con Docker.
+
+- **IaC:** Terraform modularizado (modulos network, compute, ecr) con backend remoto de estado (S3 + DynamoDB).
+- **Cloud:** AWS (VPC, EC2, ECR, S3, DynamoDB, IAM).
+- **Contenedores:** Docker.
+- **Control de versiones:** Git (ramas por feature y pull requests).
+
+Carpeta del proyecto: [aws-terraform-docker-app/](./aws-terraform-docker-app)
+
+**Estado:** infraestructura base operativa (network, compute, ecr). Proximos pasos: publicar la imagen en ECR, ejecutar el contenedor en EC2, anadir observabilidad con CloudWatch y un flujo CI/CD con GitHub Actions.
+
+---
+
+## Estructura del repositorio
+
+- **aws-terraform-docker-app/** - Proyecto principal de DevOps/IaC (Docker + Terraform + AWS).
+- **AWS/** - Practicas y ejemplos con servicios AWS (CloudFormation, RDS, VPC).
+- **Algoritmos_y_scripts/** - Scripts en Python y ejercicios de practica.
+
+---
+
+## Stack y tecnologias
+
+- **Cloud / IaC:** AWS - Terraform - Docker - Git
+- **Identidad y endpoint (Microsoft):** Entra ID - Intune - Microsoft 365 - Active Directory
+- **Automatizacion / lenguajes:** Python - Bash - PowerShell - SQL (basico)
+- **ITSM:** ServiceDesk - Jira
+
+> Repositorio de aprendizaje en evolucion continua, usado como apoyo a mi transicion hacia roles de infraestructura/Cloud/DevOps.
