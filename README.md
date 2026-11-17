@@ -1,6 +1,8 @@
 # Portafolio | Bryan Felipe Alcarruz Rodríguez
 
-Estudiante de **Ingeniería en Computación e Informática** y certificado **AWS Certified Cloud Practitioner**. Este portafolio reúne proyectos de aprendizaje y documentación técnica, orientados a oportunidades en **Soporte TI, Infraestructura, Cloud y DevOps Junior**.
+Profesional con experiencia en **soporte e infraestructura TI en entornos corporativos**. Actualmente curso **Ingeniería en Computación e Informática en la Universidad de Santiago de Chile (USACH)** y cuento con la certificación **AWS Certified Cloud Practitioner**.
+
+Complemento mi experiencia laboral con proyectos personales de **Cloud, Terraform, Docker y Python**, con el objetivo de continuar desarrollándome en **infraestructura, Cloud y DevOps**. Este portafolio reúne esas implementaciones, prácticas y documentación técnica, con su alcance y pendientes explícitos.
 
 [LinkedIn](https://www.linkedin.com/in/bryan-alcarruz/) · [GitHub](https://github.com/Bryanfalcarruz) · [Contacto](mailto:bryan.f.alcarruz@gmail.com)
 
@@ -34,7 +36,21 @@ Las capturas documentan prácticas realizadas; no garantizan que los recursos si
 | [Caminata aleatoria](Algoritmos_y_scripts/problemas_logicos/caminata_aleatoria/README.md) | Simulación en una cuadrícula y representación por consola. | Python |
 | [Método de Herón](Algoritmos_y_scripts/problemas_logicos/metodo_heron/README.md) | Aproximación iterativa de raíces cuadradas. | Python |
 
-## Tecnologías utilizadas
+## Experiencia y tecnologías
+
+### Entorno profesional
+
+Mi experiencia se centra en soporte e infraestructura corporativa, con herramientas de identidad, gestión de dispositivos y atención de servicios TI.
+
+| Área | Tecnologías utilizadas profesionalmente |
+| --- | --- |
+| Identidad y entorno Microsoft | Active Directory, Microsoft Entra ID y Microsoft 365. |
+| Gestión de dispositivos | Microsoft Intune. |
+| Gestión de servicios TI | ServiceDesk y Jira. |
+
+### Proyectos personales y académicos
+
+Las siguientes tecnologías se utilizan en los proyectos publicados de este portafolio. Su presencia aquí describe práctica y desarrollo de conocimientos en esos proyectos.
 
 | Área | Tecnologías presentes en los proyectos |
 | --- | --- |

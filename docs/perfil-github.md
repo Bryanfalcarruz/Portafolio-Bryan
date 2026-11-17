@@ -5,16 +5,28 @@ Destino: `Bryanfalcarruz/Bryanfalcarruz`, archivo `README.md`. El repositorio de
 ```markdown
 # Bryan Felipe Alcarruz Rodríguez
 
-Estudiante de Ingeniería en Computación e Informática y certificado **AWS Certified Cloud Practitioner**. Me interesa desarrollar mi carrera en **Soporte TI, Infraestructura, Cloud y DevOps Junior**.
+Profesional con experiencia en **soporte e infraestructura TI en entornos corporativos**. Actualmente curso **Ingeniería en Computación e Informática en la Universidad de Santiago de Chile (USACH)** y cuento con la certificación **AWS Certified Cloud Practitioner**.
 
-Comparto proyectos de aprendizaje, prácticas de AWS y ejercicios de programación, con documentación de su alcance y sus pendientes.
+Complemento mi experiencia laboral con proyectos personales de **Cloud, Terraform, Docker y Python**, con el objetivo de continuar desarrollándome en **infraestructura, Cloud y DevOps**. Comparto implementaciones, prácticas de AWS y proyectos académicos, con documentación de su alcance y sus pendientes.
 
 ## Formación y certificación
 
-- Ingeniería en Computación e Informática — en curso.
+- Ingeniería en Computación e Informática, Universidad de Santiago de Chile (USACH) — en curso.
 - AWS Certified Cloud Practitioner.
 
-## Tecnologías de mis proyectos
+## Experiencia y tecnologías
+
+### Entorno profesional
+
+Experiencia en soporte e infraestructura corporativa con herramientas de identidad, gestión de dispositivos y servicios TI:
+
+- **Identidad y entorno Microsoft:** Active Directory, Microsoft Entra ID y Microsoft 365.
+- **Gestión de dispositivos:** Microsoft Intune.
+- **Gestión de servicios TI:** ServiceDesk y Jira.
+
+### Proyectos personales y académicos
+
+Tecnologías utilizadas para desarrollar conocimientos y construir los proyectos publicados en mi portafolio:
 
 - **Cloud e infraestructura:** AWS, Terraform y CloudFormation.
 - **Contenedores:** Docker.
