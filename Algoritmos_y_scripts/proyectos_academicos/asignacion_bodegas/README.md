@@ -1,45 +1,54 @@
 # Asignación de bodegas a clientes
 
-Este proyecto fue desarrollado como parte de una asignatura de **Fundamentos de la Programación**, cuyo objetivo era introducir conceptos básicos de lógica computacional, estructuras de control y algoritmos.  
-No fue pensado como un curso de Python, por lo que se evitó el uso de funciones avanzadas, bibliotecas externas o estructuras propias del lenguaje. Con la excepción de herramientas indispensables para la visualización —como matplotlib— se procuró mantener el código lo más general posible.
+Proyecto académico de **Fundamentos de la Programación**, orientado a lógica computacional, estructuras de control y algoritmos. Se priorizan construcciones básicas, con NumPy para el cálculo de distancias y Matplotlib para visualización.
 
-## Descripción del proyecto
+## Descripción y alcance
 
-Dado un conjunto de coordenadas de clientes y bodegas, el programa asigna cada cliente a la bodega más cercana, intentando mantener una distribución equitativa. Luego, genera gráficos para visualizar:
+El programa lee coordenadas de clientes y bodegas. Para cada cliente, elige la bodega más cercana que aún tenga capacidad; los límites distribuyen la cantidad de clientes de forma equilibrada entre bodegas.
 
-- Las ubicaciones originales
-- Las asignaciones de clientes a bodegas
-- Los recorridos óptimos de reparto
+Genera tres visualizaciones: ubicaciones iniciales, asignaciones y recorridos de reparto. Los recorridos usan la heurística del vecino más cercano y regresan a la bodega en el gráfico. Aunque el código los llama «óptimos», no garantizan el mínimo global.
 
-## Estructura de carpetas
+## Estructura
 
+```text
 asignacion_bodegas/
 ├── asignacion_bodegas.py
 ├── informe_asignacion_bodegas.pdf
+├── problema_propuesto.pdf
 ├── README.md
 └── datos/
-├── coordenadas_clientes.txt
-└── coordenadas_bodegas.txt
+    ├── clientes_1.txt … clientes_4.txt
+    └── bodegas_1.txt … bodegas_4.txt
+```
 
-## Uso
+## Requisitos y ejecución
 
-1. Se requiere tener Python 3 instalado.
+Python 3, NumPy, Matplotlib y un entorno capaz de mostrar ventanas gráficas. Desde la raíz del repositorio:
 
-2. Los archivos de coordenadas deben estar ubicados dentro de la carpeta datos/.
+```bash
+cd Algoritmos_y_scripts/proyectos_academicos/asignacion_bodegas
+python -m pip install numpy matplotlib
+python asignacion_bodegas.py
+```
 
-3. El script se ejecuta desde una terminal o consola con el siguiente comando: 
+Introduce el nombre **con extensión y sin ruta**, primero bodegas y luego clientes:
 
-<python asignacion_bodegas.py>
+```text
+Ingrese nombre del archivo de bodegas: bodegas_1.txt
+Ingrese nombre del archivo de clientes: clientes_1.txt
+```
 
-Cuando se te solicite, escribe solo el nombre del archivo sin la ruta ni extensión. Por ejemplo:
+Los archivos se buscan en `datos/`, relativo al script. Cada línea debe contener dos coordenadas enteras separadas por espacios. Cierra cada ventana gráfica para avanzar a la siguiente.
 
-Nombre del archivo de coordenadas de clientes: clientes_1.txt
-Nombre del archivo de coordenadas de bodegas: bodegas_1.txt
+## Limitaciones
 
-El programa generará tres gráficos que se mostrarán uno a uno:
--Ubicaciones iniciales
--Asignación de colores por bodega
--Recorridos óptimos
+La asignación depende del orden de los clientes y de los cupos disponibles. El script no incorpora manejo de archivos inexistentes, validación general de datos ni optimización global de rutas. Usa los conjuntos de datos publicados para reproducir la práctica.
 
-## Informe
-El archivo informe_asignacion_bodegas.pdf contiene el análisis metodológico y explicación detallada del problema y su solución.
+## Documentación
+
+- [Informe metodológico](informe_asignacion_bodegas.pdf).
+- [Problema propuesto](problema_propuesto.pdf).
+- [Datos de entrada](datos/).
+- [Código Python](asignacion_bodegas.py).
+
+[Volver al portafolio](../../../README.md)
