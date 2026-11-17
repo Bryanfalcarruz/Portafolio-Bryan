@@ -1,64 +1,46 @@
-=========================================
-Módulo compute
-=========================================
+# Módulo compute
 
-Este módulo crea la capa de cómputo principal del proyecto File Organizer, desplegando una instancia EC2 con Docker habilitado y acceso administrativo mediante AWS Systems Manager (SSM).
+Define la instancia EC2 y su identidad IAM para el [proyecto DevOps](../../../README.md), con instalación de Docker y permisos para administración mediante AWS Systems Manager (SSM).
 
------------------------------------------
-## Objetivo
------------------------------------------
+## Recursos y comportamiento
 
-Proporcionar una instancia liviana y segura para ejecutar el contenedor del File Organizer sin necesidad de acceso SSH, utilizando infraestructura totalmente definida como código (IaC).
+- EC2 `t3.micro` por defecto, con AMI Amazon Linux 2 x86_64 seleccionada mediante filtro.
+- Subred y Security Group recibidos desde network, IP pública y monitoreo detallado de EC2 habilitados.
+- Rol IAM e instance profile con `AmazonSSMManagedInstanceCore`, `AmazonS3ReadOnlyAccess` y `AmazonEC2ContainerRegistryReadOnly`.
+- `user_data` instala y habilita Docker, agrega `ec2-user` al grupo Docker y registra mensajes en `/var/log/user-data.log`.
+- El script incluye autenticación en ECR, descarga de la imagen y un intento de ejecutar el contenedor `file-organizer`.
 
------------------------------------------
-## Recursos creados
------------------------------------------
+El Security Group usado por la raíz no permite tráfico entrante y permite toda la salida IPv4. El acceso administrativo está planteado mediante SSM; no se configura una llave SSH.
 
-Instancia EC2
-    Tipo: t3.micro
-    Sistema operativo: Amazon Linux 2
-    Subred: file-organizer-public-a (zona us-west-2a)
-    Asignación automática de IP pública habilitada
-    Script user_data que instala y habilita Docker
-Rol e Instance Profile
-    Rol IAM con permisos:
-        AmazonSSMManagedInstanceCore (para conexión por SSM)
-        AmazonS3ReadOnlyAccess (para acceso a bucket de estado o archivos del proyecto)
-Configuración de red
-    Security Group base heredado del módulo network
-    Sin puertos de entrada abiertos (todo ingress bloqueado)
-    Tráfico saliente (egress) completamente permitido
-
------------------------------------------
 ## Variables de entrada
------------------------------------------
 
-project_name: Nombre del proyecto utilizado para el etiquetado y la nomenclatura de los recursos creados.
-subnet_id: Identificador de la subred donde se desplegará la instancia EC2.
-sg_id: Identificador del Security Group asociado a la instancia, heredado del módulo network.
-instance_type: Tipo de instancia EC2 a utilizar. Por defecto se define t3.micro.
-tags: Conjunto de etiquetas comunes aplicadas a todos los recursos del módulo.
+| Variable | Uso | Predeterminado |
+| --- | --- | --- |
+| `project_name` | Nombres y etiquetas. | Obligatorio |
+| `subnet_id` | Subred de la instancia. | Obligatorio |
+| `sg_id` | Security Group asociado. | Obligatorio |
+| `instance_type` | Tipo de instancia. | `t3.micro` |
+| `key_name` | Declarada, pero no utilizada por la instancia. | `null` |
+| `tags` | Etiquetas comunes. | `{}` |
+| `ecr_repository_url` | URL de la imagen para el script de inicio. | `null` |
+| `image_tag` | Etiqueta de la imagen. | `latest` |
 
------------------------------------------
-## Outputs generados
------------------------------------------
+La raíz proporciona la URL del módulo ECR. Aunque la variable permite `null`, ese valor no debe interpretarse como una ejecución sin ECR validada: se interpola en `user_data`.
 
-instance_id: ID único de la instancia EC2 creada por el módulo.
-public_ip: Dirección IP pública asignada automáticamente a la instancia al momento del despliegue.
-iam_role_name: Nombre del rol IAM asociado a la instancia, el cual otorga permisos de SSM y acceso de solo lectura a S3.
+## Outputs
 
------------------------------------------
-## Arquitectura
------------------------------------------
+| Output | Valor |
+| --- | --- |
+| `instance_id` | Identificador de EC2. |
+| `public_ip` | IP pública de la instancia. |
+| `iam_role_name` | Nombre del rol IAM. |
 
-El módulo compute se integra con la red creada previamente:
-la instancia se lanza dentro de la VPC y subred pública del módulo network, utilizando el Security Group base.
-El acceso administrativo se realiza únicamente mediante AWS Systems Manager (SSM), eliminando la necesidad de llaves SSH.
+## Estado y limitaciones
 
------------------------------------------   
-## Evidencias
------------------------------------------
+El código de arranque desde ECR está presente, pero no acredita un despliegue funcional de la aplicación. El comando `docker run` no incluye el argumento obligatorio `--path` ni un volumen con datos. También debe verificarse la publicación de la imagen y la ejecución completa del arranque.
 
-Las capturas del despliegue se almacenan en:
+`monitoring = true` habilita monitoreo detallado de EC2; no configura logs de la aplicación, paneles ni alarmas. Estas mejoras y CI/CD permanecen pendientes.
 
-docs/screenshots/
+## Integración y evidencias
+
+Se invoca desde [infra/main.tf](../../main.tf). Consulta las [capturas de EC2 y Docker](../../../docs/screenshots/) y el [estado general](../../../README.md).
